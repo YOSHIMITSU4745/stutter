@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>stutter</title>
+    <link rel="icon" href="repeat-svgrepo-com.svg">
+
+    <style>
+
+        *
+        {
+            margin:0;
+            box-sizing: border-box;
+        }
+        .body
+        {
+           
+            margin:0;
+            padding:0;
+            font-family: Arial, Helvetica, sans-serif;
+            
+        }
+
+        .click
+        {
+            
+            width:100%;
+            height:88vh;
+            background-color: aquamarine;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap:50px;
+            justify-content: center;
+            padding-top: 20px;;
+            
+        }
+        .click-2
+        {
+            background-color: rgb(177, 208, 235);
+            width:75%;
+            height:100px;
+            
+            font-variant: small-caps;
+            border:none;
+            border-radius: 4px;
+            box-shadow:1px 1px 5px 1px rgba(0,0,0,0.5);
+            transition: background-color 0.25s;
+            font-size: 75px;
+           
+
+        }
+
+
+
+        .click-2:hover{
+            cursor:pointer;
+        }
+
+        .click-2:active
+        {
+            background-color:rgb(109, 228, 255);
+        }
+
+        .inp
+        {
+            width:50%;
+            padding-left:2%;
+            font-size: 50px;
+            height:10%;
+            border:1px solid black;
+            border-radius: 4px;
+            background-color: rgb(209, 255, 240);
+            
+
+        }
+        .inp::placeholder
+        {
+            font-size: 50px;
+        }
+        
+        .txt
+        {
+            width:80%;
+            height:15%;
+            font-size: 50px;
+            padding-left: 2%;
+            background-color: rgb(209, 255, 240);
+        }
+        .txt::placeholder
+        {
+            font-size: 50px;
+        }
+
+        .inp:active
+        {
+            border:none;
+
+        }
+
+        .out1
+        {
+            width:80%;
+            height: 100%;
+            
+            position: relative;
+            flex:1;
+        }
+
+        .out
+        {
+            width:100%;
+            height: 100px;
+            background-color: white;
+            border-radius: 4px;
+            box-shadow:1px 1px 5px 1px rgba(0,0,0,0.5);
+            text-align: center;
+            font-size: 50px;
+            background-color: rgb(228, 228, 221);
+
+        }   
+
+        .copybtn
+        {
+            position: absolute;
+            top:0;
+            right:0;
+            border-radius: 4px;
+            border:none;
+            box-shadow:0px 0px 5px 2px rgba(0,0,0,0.5);
+            width:10%;
+            height:99px;
+            
+        }
+
+        .clipimg
+        {
+            width:65px;
+        }
+
+
+    </style>
+
+
+
+</head>
+
+<body>
+    
+<div class="click">
+    <button class="click-2">
+        
+        click here 
+    </button>
+    <input class="inp" type="number" placeholder="Repetitions" >
+
+    <input class="txt" type="text" placeholder="Text to be printed">
+
+    <div class="out1">
+
+        <input class="out" type="text">
+            
+            
+        
+        
+        <button class="copybtn" onclick="copyfunc()"><img class="clipimg" src="211649_clipboard_icon.svg" alt=""></button>
+    </div>
+
+</div>
+</body>
+
+<script>
+    let b1=document.querySelector('.click-2');
+    let b2=document.querySelector('.click');
+    let b3=document.querySelector('.out');
+    b3.value='Result';
+    let str='';
+    let thing="hellop";
+    function copyfunc()
+
+    {
+        let copytext=b3;
+        copytext.select()
+        {
+            document.execCommand('copy');
+        }
+
+
+
+    }
+
+
+    b1.addEventListener('click',function(){
+
+        thing=document.querySelector('.txt').value;
+        
+        let v=document.querySelector('.inp').value;
+        for(i=0;i<v;i++)
+        str+=`\n ${thing} \n `;
+        b3.value=str;
+
+   
+    })
+    
+    
+
+</script>
+
+
+</html>
